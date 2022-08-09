@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import Ingredient from './Ingredient'
 
-const IngredientList = (props) => {
-
+class IngredientList extends Component {
+	render() {
 		// map over the ing
 		// mapped over and created from Ingredient Comp
-        let allIngredients = props.ingredients.map((ing, idx) => (
+        let allIngredients = this.props.ingredients.map((ing, idx) => (
             <li key={idx}>
                 <Ingredient 
                     ingredient={ing}
-                    clickFunc={props.add}
+                    clickFunc={this.props.add}
                     itemKey={idx}
                 />
             </li>
@@ -25,5 +25,6 @@ const IngredientList = (props) => {
             </>
         )
 	}
+}
 
 export default IngredientList
